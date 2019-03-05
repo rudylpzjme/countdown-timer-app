@@ -13,29 +13,26 @@ class CountdownTimer extends Component {
     }
   
     tick() {
-          this.setState(state => ({
+          if(this.state.days !== 0 || this.state.hours !== 0 || this.state.minutes !== 0 || this.state.seconds !== 0) this.setState(state => ({
             seconds: state.seconds - 1
           }));
 
-          if(this.state.seconds === 0) this.setState(state => ({
+          if(this.state.seconds === 0 && this.state.minutes <= 60 && this.state.minutes > 0) this.setState(state => ({
             minutes: state.minutes - 1,
             seconds: 60,
           }));
 
-          if(this.state.minutes === 0) this.setState(state => ({
+          if(this.state.minutes === 0 && this.state.seconds === 0 && this.state.hours > 0) this.setState(state => ({
             hours: state.hours - 1,
-            minutes: 60,
+            minutes: 59,
+            seconds: 60,
           }));
 
-          if(this.state.hours === 0) this.setState(state => ({
+          if(this.state.hours === 0 && this.state.minutes === 0 && this.state.seconds === 0 && this.state.days > 0) this.setState(state => ({
             days: state.days - 1,
-            hours: 24,
-          }));
-
-          if(this.state.days === 0) this.setState(state => ({
-            hours: 0,
-            minutes: 0,
-            seconds: 0,
+            hours: 23,
+            minutes: 60,
+            seconds: 60,
           }));
     }
   
