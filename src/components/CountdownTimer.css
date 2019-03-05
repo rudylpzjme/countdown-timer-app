@@ -1,0 +1,22 @@
+.countdown-timer-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.time-box {
+    border: 1px solid #e3e6e6;
+    border-radius: 3px;
+    width: 200px;
+    text-align: center;
+    vertical-align: center;
+}
+
+.time-digit {
+    font-size: 2.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.time-type {
+    font-size: 1.5em;
+    color: gray;
+}
